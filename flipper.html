@@ -1,0 +1,78 @@
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    
+    #first{
+        width:100%;
+        height:70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+    }
+    #name{
+        padding:0 10px;
+    }
+    #bottom{
+        width:100%;
+        height:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 50px;
+    
+    }
+    #letter{
+        padding:0 15px;
+    }
+    #button{
+        padding:5px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background-color:brown;
+        color:white;
+    }
+
+</style>
+<html>
+    <body>
+        <div id="header">
+            <div id="first">
+                <h1 id="letter">color</h1>
+                <h1 id="name">#ffffff</h1>
+            </div>
+        </div>
+        <div id="bottom">
+            <div id="btmbox">
+                <button id="button">Clik to Change BackgroundColor</button>
+            </div>
+        </div>
+        
+    <script>
+        let textname=document.getElementById("name")
+        let bottom=document.getElementById("bottom")
+        let btn=document.getElementById("button")
+        btn.addEventListener('click',changecolor)
+        let hex=[0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"]
+        function changecolor(){
+            let has='#'
+            for(i=1;i<=6;i++){
+                has=has+rand()
+            }
+            bottom.style.backgroundColor=has
+            textname.innerHTML=has
+        }
+
+        function rand(){
+            let randomindex=Math.floor(Math.random()*16)
+            return hex[randomindex]
+
+        }
+    </script>
+    </body>
+</html>
